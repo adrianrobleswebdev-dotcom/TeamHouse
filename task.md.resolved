@@ -1,0 +1,9 @@
+# Angular Workspace Setup ✅
+
+- [x] Create Angular project with CSS and standalone components
+- [x] Create `src/app/core` folder
+- [x] Create `src/app/features` folder
+- [x] Create `src/app/layout` folder
+- [x] Create `src/app/shared` folder
+- [x] Upgrade to Angular 19 (latest) with `zone.js ~0.15.0`
+- [x] Verify project structure and config files

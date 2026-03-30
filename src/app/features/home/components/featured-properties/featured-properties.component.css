@@ -1,0 +1,44 @@
+/* Custom styles for featured properties. Mostly handled by Tailwind */
+
+/* Animación de entrada suave (Fade In + Slide Up) */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.75s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto tipo Pokemon Card / Foil Flash */
+.shiny-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0s; /* Regresa inmediatamente, sin animación al quitar el hover */
+  pointer-events: none; /* Que no estorbe a los clics (likear o botones) */
+  z-index: 10;
+}
+
+.group:hover .shiny-effect::before {
+  left: 150%;
+  transition: left 1s ease-in-out; /* Solo se anima de ida */
+}

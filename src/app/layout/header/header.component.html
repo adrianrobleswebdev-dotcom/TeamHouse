@@ -1,0 +1,55 @@
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" [class.bg-[#0F1624]]="isScrolled()"
+     [class.bg-transparent]="!isScrolled()">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a routerLink="/" class="flex items-center gap-3" (click)="closeMenu()">
+            <div class="w-9 h-9 bg-[#1A5C3A] rounded-sm flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+            </div>
+            <span class="text-white font-bold text-lg tracking-widest">TEAMHOUSE</span>
+        </a>
+
+        <!-- Navegación desktop -->
+        <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+            <ul class="flex items-center gap-8 list-none">
+                @for (item of navItems(); track item.path) {
+                <li>
+                    <a [routerLink]="item.path" routerLinkActive="text-[#F59E0B]"
+                        class="text-gray-300 hover:text-white text-sm font-semibold tracking-widest transition-colors duration-200">
+                        {{ item.label }}
+                    </a>
+                </li>
+                }
+            </ul>
+        </nav>
+
+        <!-- Botón menú mobile -->
+        <button class="md:hidden text-white font-semibold tracking-widest text-sm uppercase" (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
+            {{ isMenuOpen() ? 'cerrar' : 'menu' }}
+        </button>
+
+    </div>
+
+    <!-- Menú mobile desplegable -->
+    @if (isMenuOpen()) {
+    <nav id="mobile-menu" class="md:hidden bg-[#0F1624] border-t border-white/10 px-6 py-4"
+        aria-label="Navegación mobile">
+        <ul class="flex flex-col gap-4 list-none">
+            @for (item of navItems(); track item.path) {
+            <li>
+                <a [routerLink]="item.path" routerLinkActive="text-[#F59E0B]"
+                    class="text-gray-300 hover:text-white text-sm font-semibold tracking-widest transition-colors duration-200 block"
+                    (click)="closeMenu()">
+                    {{ item.label }}
+                </a>
+            </li>
+            }
+        </ul>
+    </nav>
+    }
+
+</header>

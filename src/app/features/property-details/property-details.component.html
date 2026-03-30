@@ -1,0 +1,173 @@
+<div class="min-h-screen bg-[var(--th-bg)] text-white p-4 md:p-8 mt-[68px] pb-20">
+  @if (property) {
+    <div class="max-w-7xl mx-auto animate-fade-in-up">
+      
+      <!-- Navegación Superior -->
+      <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap gap-4">
+          <a routerLink="/" fragment="propiedades" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium py-3 px-6 rounded-2xl border border-white/5 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Regresar a Inicio
+          </a>
+          <a routerLink="/properties" class="inline-flex items-center gap-2 border border-white/10 hover:border-(--th-gold-accent) hover:text-(--th-gold-accent) text-white font-medium py-3 px-6 rounded-2xl transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+            Seguir Explorando
+          </a>
+        </div>
+        
+        <div class="flex gap-2">
+           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-(--th-gold-accent) transition-all group">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-(--th-gold-accent)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+             </svg>
+           </button>
+           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-(--th-gold-accent) transition-all group">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-(--th-gold-accent)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-2.684 3 3 0 000 2.684zm0 9.316a3 3 0 100-2.684 3 3 0 000 2.684z" />
+             </svg>
+           </button>
+        </div>
+      </div>
+
+      <!-- Galería de Impacto (Grid Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12 h-[350px] md:h-[600px]">
+        <!-- Imagen Principal -->
+        <div class="md:col-span-2 relative group overflow-hidden rounded-3xl">
+          <img [src]="property.gallery[0]" alt="Principal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+        
+        <!-- Imágenes Secundarias (Ocultas en móvil pequeño o scrollable) -->
+        <div class="hidden md:grid md:col-span-2 grid-cols-2 gap-4">
+          @for (img of property.gallery.slice(1, 5); track $index) {
+            <div class="relative group overflow-hidden rounded-2xl h-full">
+              <img [src]="img" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Cabecera de Información -->
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 pb-8 border-b border-white/5">
+            <div>
+              <span class="inline-block px-4 py-1.5 rounded-full bg-(--th-gold-accent)/10 text-(--th-gold-accent) text-xs font-bold uppercase tracking-widest mb-4">
+                {{ property.status }}
+              </span>
+              <h1 class="text-4xl md:text-6xl font-extrabold mb-4">{{ property.title }}</h1>
+              <p class="flex items-center text-slate-400 gap-2">
+                <span class="p-2 bg-white/5 rounded-lg">
+                  <svg class="w-5 h-5 text-(--th-gold-accent)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                {{ property.location }}
+              </p>
+            </div>
+            
+            <div class="mt-8 md:mt-0 text-left md:text-right">
+              <p class="text-slate-500 text-sm mb-1">{{ property.priceLabel }}</p>
+              <p class="text-4xl md:text-5xl font-black text-(--th-gold-accent)">{{ property.price }}</p>
+            </div>
+          </div>
+
+          <!-- Atributos Clave -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            @for (attr of property.attributes; track attr.id) {
+              <div class="flex flex-col gap-2">
+                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">{{ attr.id === 'beds' ? 'Habitaciones' : attr.id === 'baths' ? 'Baños' : attr.id === 'area' ? 'Superficie' : 'Niveles' }}</span>
+                <div class="flex items-center gap-3">
+                   <span class="text-2xl font-bold">{{ attr.label }}</span>
+                </div>
+              </div>
+            }
+          </div>
+
+          <!-- Descripción -->
+          <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <span class="w-8 h-1 bg-(--th-gold-accent) rounded-full"></span>
+              Resumen de la Propiedad
+            </h2>
+            <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light">
+              {{ property.description }}
+            </p>
+          </div>
+
+          <!-- Amenidades Premium -->
+          <div class="mb-16 bg-white/5 rounded-3xl p-8 border border-white/5">
+            <h2 class="text-2xl font-bold mb-8">Características y Amenidades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              @for (am of property.amenities; track $index) {
+                <div class="flex items-center gap-4 group">
+                  <div class="w-10 h-10 rounded-xl bg-(--th-gold-accent)/10 flex items-center justify-center group-hover:bg-(--th-gold-accent) transition-colors duration-300">
+                    <span class="material-symbols-outlined text-(--th-gold-accent) group-hover:text-black text-xl">
+                      {{ am.icon }}
+                    </span>
+                  </div>
+                  <span class="text-slate-300 group-hover:text-white transition-colors">{{ am.label }}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Columna Lateral: Contacto -->
+        <div class="lg:w-full">
+          <div class="sticky top-28 bg-white/5 backdrop-blur-xl rounded-[40px] p-8 md:p-10 border border-white/10 shadow-3xl">
+            <h3 class="text-2xl font-bold mb-8">Solicitar Informes</h3>
+            
+            <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-6">
+              <div class="space-y-2">
+                <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">NOMBRE COMPLETO</label>
+                <input type="text" formControlName="name" placeholder="Ej. Carlos Slim" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none">
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">CORREO ELECTRÓNICO</label>
+                <input type="email" formControlName="email" placeholder="hola@lujo.com" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none">
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">MENSAJE</label>
+                <textarea rows="4" formControlName="message" placeholder="¿Cuándo podemos agendar una visita?" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none resize-none"></textarea>
+              </div>
+
+              <button type="submit" [disabled]="contactForm.invalid" class="w-full bg-(--th-gold-accent) hover:bg-(--th-gold-hover) text-black font-black py-5 rounded-2xl transition-all shadow-xl shadow-(--th-gold-accent)/20 disabled:opacity-50">
+                ENVIAR SOLICITUD
+              </button>
+            </form>
+            
+            <div class="mt-8 pt-8 border-t border-white/10 flex flex-col gap-4">
+              <p class="text-xs text-center text-slate-500">O contacta directamente vía WhatsApp</p>
+              <a href="#" class="flex items-center justify-center gap-3 p-4 border border-[#25D366]/30 rounded-2xl text-[#25D366] hover:bg-[#25D366]/5 transition-all font-bold">
+                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807l.374.223c1.51.899 3.248 1.372 5.023 1.372 5.454 0 9.893-4.439 9.895-9.895.001-2.644-1.026-5.132-2.895-7.003s-4.358-2.894-7.002-2.894c-5.454 0-9.892 4.439-9.892 9.895 0 2.016.593 3.991 1.716 5.717l.244.375-1.114 4.072 4.153-1.087z"/></svg>
+                 WHATSAPP
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="flex flex-col items-center justify-center min-h-[60vh] space-y-6">
+       <div class="relative">
+         <div class="w-24 h-24 border-2 border-white/5 rounded-full animate-ping absolute"></div>
+         <div class="w-24 h-24 border-2 border-(--th-gold-accent)/20 rounded-full flex items-center justify-center">
+            <svg class="w-10 h-10 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+         </div>
+       </div>
+       <h2 class="text-2xl font-bold text-slate-400">Propiedad no disponible</h2>
+       <a routerLink="/properties" class="px-8 py-3 bg-(--th-gold-accent) text-black rounded-xl font-bold">Ver otras opciones</a>
+    </div>
+  }
+</div>
+

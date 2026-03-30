@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import "tailwindcss";
+
+/* Iconos para las amenidades */
+
+/* =============================================
+   DESIGN TOKENS — TeamHouse Inmobiliaria
+   ============================================= */
+:root {
+  --th-bg: #0b0e14;
+  --th-bg-white: #eceff1;
+  --th-surface: #151B26;
+  --th-accent: #F59E0B;
+  --th-gold-accent:#d9be9b;
+  --th-gold-hover:#c6a680;
+  --th-accent-hover: #D97706;
+  --th-nav: #0F1624;
+  --th-card-background:#1e293b;
+  --th-green: #1A5C3A;
+  --th-text: #FFFFFF;
+  --th-text-slate:#90a1b9;
+  --th-text-muted: #9DA8B6;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --text-min: 14px;
+}
+
+/* =============================================
+   ANIMACIONES
+   ============================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--th-bg);
+  color: var(--th-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* EFECTO DE PRESIÓN PARA BOTONES */
+.btn-interactive {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-interactive:active {
+  transform: scale(0.96);
+  filter: brightness(0.9);
+}
