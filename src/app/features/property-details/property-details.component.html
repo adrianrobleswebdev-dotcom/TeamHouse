@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-[var(--th-bg)] text-white p-4 md:p-8 mt-[68px] pb-20">
+<div class="min-h-screen bg-th-bg text-white p-4 md:p-8 mt-[68px] pb-20">
   @if (property) {
     <div class="max-w-7xl mx-auto animate-fade-in-up">
       
@@ -11,7 +11,7 @@
             </svg>
             Regresar a Inicio
           </a>
-          <a routerLink="/properties" class="inline-flex items-center gap-2 border border-white/10 hover:border-(--th-gold-accent) hover:text-(--th-gold-accent) text-white font-medium py-3 px-6 rounded-2xl transition-all">
+          <a routerLink="/properties" class="inline-flex items-center gap-2 border border-white/10 hover:border-th-gold-accent hover:text-th-gold-accent text-white font-medium py-3 px-6 rounded-2xl transition-all">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
@@ -20,13 +20,13 @@
         </div>
         
         <div class="flex gap-2">
-           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-(--th-gold-accent) transition-all group">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-(--th-gold-accent)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-th-gold-accent transition-all group">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-th-gold-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
              </svg>
            </button>
-           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-(--th-gold-accent) transition-all group">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-(--th-gold-accent)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <button class="p-3 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-th-gold-accent transition-all group">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:text-th-gold-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-2.684 3 3 0 000 2.684zm0 9.316a3 3 0 100-2.684 3 3 0 000 2.684z" />
              </svg>
            </button>
@@ -58,13 +58,13 @@
           
           <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 pb-8 border-b border-white/5">
             <div>
-              <span class="inline-block px-4 py-1.5 rounded-full bg-(--th-gold-accent)/10 text-(--th-gold-accent) text-xs font-bold uppercase tracking-widest mb-4">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-th-gold-accent/10 text-th-gold-accent text-xs font-bold uppercase tracking-widest mb-4">
                 {{ property.status }}
               </span>
               <h1 class="text-4xl md:text-6xl font-extrabold mb-4">{{ property.title }}</h1>
               <p class="flex items-center text-slate-400 gap-2">
                 <span class="p-2 bg-white/5 rounded-lg">
-                  <svg class="w-5 h-5 text-(--th-gold-accent)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <svg class="w-5 h-5 text-th-gold-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                   </svg>
                 </span>
@@ -74,7 +74,7 @@
             
             <div class="mt-8 md:mt-0 text-left md:text-right">
               <p class="text-slate-500 text-sm mb-1">{{ property.priceLabel }}</p>
-              <p class="text-4xl md:text-5xl font-black text-(--th-gold-accent)">{{ property.price }}</p>
+              <p class="text-4xl md:text-5xl font-black text-th-gold-accent">{{ property.price }}</p>
             </div>
           </div>
 
@@ -93,7 +93,7 @@
           <!-- Descripción -->
           <div class="mb-16">
             <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span class="w-8 h-1 bg-(--th-gold-accent) rounded-full"></span>
+              <span class="w-8 h-1 bg-th-gold-accent rounded-full"></span>
               Resumen de la Propiedad
             </h2>
             <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light">
@@ -107,8 +107,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               @for (am of property.amenities; track $index) {
                 <div class="flex items-center gap-4 group">
-                  <div class="w-10 h-10 rounded-xl bg-(--th-gold-accent)/10 flex items-center justify-center group-hover:bg-(--th-gold-accent) transition-colors duration-300">
-                    <span class="material-symbols-outlined text-(--th-gold-accent) group-hover:text-black text-xl">
+                  <div class="w-10 h-10 rounded-xl bg-th-gold-accent/10 flex items-center justify-center group-hover:bg-th-gold-accent transition-colors duration-300">
+                    <span class="material-symbols-outlined text-th-gold-accent group-hover:text-black text-xl">
                       {{ am.icon }}
                     </span>
                   </div>
@@ -128,20 +128,20 @@
             <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-6">
               <div class="space-y-2">
                 <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">NOMBRE COMPLETO</label>
-                <input type="text" formControlName="name" placeholder="Ej. Carlos Slim" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none">
+                <input type="text" formControlName="name" placeholder="Ej. Carlos Slim" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-th-gold-accent focus:ring-0 transition-all outline-none">
               </div>
 
               <div class="space-y-2">
                 <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">CORREO ELECTRÓNICO</label>
-                <input type="email" formControlName="email" placeholder="hola@lujo.com" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none">
+                <input type="email" formControlName="email" placeholder="hola@lujo.com" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-th-gold-accent focus:ring-0 transition-all outline-none">
               </div>
 
               <div class="space-y-2">
                 <label class="text-[10px] font-black uppercase text-slate-500 tracking-tighter">MENSAJE</label>
-                <textarea rows="4" formControlName="message" placeholder="¿Cuándo podemos agendar una visita?" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-(--th-gold-accent) focus:ring-0 transition-all outline-none resize-none"></textarea>
+                <textarea rows="4" formControlName="message" placeholder="¿Cuándo podemos agendar una visita?" class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-th-gold-accent focus:ring-0 transition-all outline-none resize-none"></textarea>
               </div>
 
-              <button type="submit" [disabled]="contactForm.invalid" class="w-full bg-(--th-gold-accent) hover:bg-(--th-gold-hover) text-black font-black py-5 rounded-2xl transition-all shadow-xl shadow-(--th-gold-accent)/20 disabled:opacity-50">
+              <button type="submit" [disabled]="contactForm.invalid" class="w-full bg-th-gold-accent hover:bg-th-gold-hover text-black font-black py-5 rounded-2xl transition-all shadow-xl shadow-th-gold-accent/20 disabled:opacity-50">
                 ENVIAR SOLICITUD
               </button>
             </form>
@@ -161,12 +161,12 @@
     <div class="flex flex-col items-center justify-center min-h-[60vh] space-y-6">
        <div class="relative">
          <div class="w-24 h-24 border-2 border-white/5 rounded-full animate-ping absolute"></div>
-         <div class="w-24 h-24 border-2 border-(--th-gold-accent)/20 rounded-full flex items-center justify-center">
+         <div class="w-24 h-24 border-2 border-th-gold-accent/20 rounded-full flex items-center justify-center">
             <svg class="w-10 h-10 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
          </div>
        </div>
        <h2 class="text-2xl font-bold text-slate-400">Propiedad no disponible</h2>
-       <a routerLink="/properties" class="px-8 py-3 bg-(--th-gold-accent) text-black rounded-xl font-bold">Ver otras opciones</a>
+       <a routerLink="/properties" class="px-8 py-3 bg-th-gold-accent text-black rounded-xl font-bold">Ver otras opciones</a>
     </div>
   }
 </div>

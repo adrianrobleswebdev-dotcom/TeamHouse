@@ -3,26 +3,29 @@
 
 /* Iconos para las amenidades */
 
-/* =============================================
-   DESIGN TOKENS — TeamHouse Inmobiliaria
-   ============================================= */
-:root {
-  --th-bg: #0b0e14;
-  --th-bg-white: #eceff1;
-  --th-surface: #151B26;
-  --th-accent: #F59E0B;
-  --th-gold-accent:#d9be9b;
-  --th-gold-hover:#c6a680;
-  --th-accent-hover: #D97706;
-  --th-nav: #0F1624;
-  --th-card-background:#1e293b;
-  --th-green: #1A5C3A;
-  --th-text: #FFFFFF;
-  --th-text-slate:#90a1b9;
-  --th-text-muted: #9DA8B6;
 
+
+@theme {
+  /* Colors */
+  --color-th-bg: #0b0e14;
+  --color-th-bg-white: #eceff1;
+  --color-th-surface: #151B26;
+  --color-th-accent: #F59E0B;
+  --color-th-gold-accent: #d9be9b;
+  --color-th-gold-hover: #c6a680;
+  --color-th-accent-hover: #D97706;
+  --color-th-nav: #0F1624;
+  --color-th-card-background: #1e293b;
+  --color-th-green: #1A5C3A;
+  --color-th-text: #FFFFFF;
+  --color-th-text-slate: #90a1b9;
+  --color-th-text-muted: #9DA8B6;
+
+  /* Fonts */
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
+
+  /* Typography */
   --text-min: 14px;
 }
 
@@ -53,8 +56,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--th-bg);
-  color: var(--th-text);
+  background-color: var(--color-th-bg);
+  color: var(--color-th-text);
   -webkit-font-smoothing: antialiased;
 }
 

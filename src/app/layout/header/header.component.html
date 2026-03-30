@@ -4,7 +4,7 @@
 
         <!-- Logo -->
         <a routerLink="/" class="flex items-center gap-3" (click)="closeMenu()">
-            <div class="w-9 h-9 bg-[#1A5C3A] rounded-sm flex items-center justify-center flex-shrink-0">
+            <div class="w-9 h-9 bg-th-green rounded-sm flex items-center justify-center shrink-0">
                 <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                 </svg>
@@ -36,7 +36,7 @@
 
     <!-- Menú mobile desplegable -->
     @if (isMenuOpen()) {
-    <nav id="mobile-menu" class="md:hidden bg-[#0F1624] border-t border-white/10 px-6 py-4"
+    <nav id="mobile-menu" class="md:hidden bg-th-nav border-t border-white/10 px-6 py-4"
         aria-label="Navegación mobile">
         <ul class="flex flex-col gap-4 list-none">
             @for (item of navItems(); track item.path) {

@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-(--th-bg) flex flex-col md:flex-row pt-[68px]">
+<div class="min-h-screen bg-th-bg flex flex-col md:flex-row pt-[68px]">
   
   <!-- Sidebar Filtros -->
   <aside class="w-full md:w-[320px] lg:w-[350px] bg-[#141822] border-r border-[#1f2636] p-6 flex flex-col gap-8 shrink-0">
@@ -18,7 +18,7 @@
       <label for="propSearchQuery" class="block text-(length:--text-min) font-bold text-gray-400 uppercase tracking-widest mb-3" >Busca tu propiedad</label>
       <div class="relative">
         <input type="text" id="propSearchQuery" [(ngModel)]="searchQuery" placeholder="Buscar propiedades..." 
-        class="w-full bg-[#0e1117] border border-(--th-text-slate) rounded-lg py-3 pl-10 pr-4 text-gray-300 text-sm focus:outline-none focus:border-(--th-gold-accent) transition-colors">
+        class="w-full bg-[#0e1117] border border-th-text-slate rounded-lg py-3 pl-10 pr-4 text-gray-300 text-sm focus:outline-none focus:border-th-gold-accent transition-colors">
         <div class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" >
           <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -31,7 +31,7 @@
     <div>
       <label class="block text-(length:--text-min) font-bold text-gray-400 uppercase tracking-widest mb-3">UBICACIÓN</label>
       <div class="relative">
-        <select class="w-full bg-[#0e1117] border border-(--th-text-slate) rounded-lg py-3 pr-10 pl-4 text-gray-300 text-sm appearance-none focus:outline-none focus:border-(--th-gold-accent) transition-colors">
+        <select class="w-full bg-[#0e1117] border border-th-text-slate rounded-lg py-3 pr-10 pl-4 text-gray-300 text-sm appearance-none focus:outline-none focus:border-th-gold-accent transition-colors">
           <option>Puebla, México</option>
           <option>CDMX, México</option>
           <option>Querétaro, México</option>
@@ -47,13 +47,13 @@
       <label class="block text-(length:--text-min) font-bold text-gray-400 uppercase tracking-widest mb-3">TIPO DE PROPIEDAD</label>
       <div class="flex gap-3">
         <button (click)="togglePropertyType('CASA')" 
-          [class]="propertyType === 'CASA' ? 'bg-[#1C2230] border-(--th-gold-accent) text-white' : 'bg-[#0e1117] border-(--th-text-slate) text-gray-400'" 
+          [class]="propertyType === 'CASA' ? 'bg-[#1C2230] border-th-gold-accent text-white' : 'bg-[#0e1117] border-th-text-slate text-gray-400'" 
           class="flex-1 flex flex-col items-center justify-center gap-2 py-4 border rounded-xl transition-colors btn-interactive">
           <svg class="w-5 h-5 line-current" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15h-4v-6H11v6H7v-7.81l5-4.5 5 4.5V18z"/></svg>
           <span class="text-[10px] font-bold tracking-widest">CASA</span>
         </button>
         <button (click)="togglePropertyType('DEPTO')" 
-          [class]="propertyType === 'DEPTO' ? 'bg-[#1C2230] border-(--th-gold-accent) text-white' : 'bg-[#0e1117] border-(--th-text-slate) text-gray-400'"
+          [class]="propertyType === 'DEPTO' ? 'bg-[#1C2230] border-th-gold-accent text-white' : 'bg-[#0e1117] border-th-text-slate text-gray-400'"
           class="flex-1 flex flex-col items-center justify-center gap-2 py-4 border rounded-xl transition-colors btn-interactive">
           <svg class="w-5 h-5 line-current" fill="currentColor" viewBox="0 0 24 24"><path d="M4 19h16v-2H4v2zm16-4H4v-2H4v2h16zm0-4H4V9h16v2zm0-4H4V5h16v2z"/></svg>
           <span class="text-[10px] font-bold tracking-widest">DEPTO</span>
@@ -65,9 +65,9 @@
     <div>
       <div class="flex justify-between items-center mb-3">
         <label class="text-(length:--text-min) font-bold text-gray-400 uppercase tracking-widest">RANGO DE PRECIO</label>
-        <span class=" text-(length:--text-min) text-(--th-gold-accent)  font-bold">$5M - $20M+</span>
+        <span class=" text-(length:--text-min) text-th-gold-accent  font-bold">$5M - $20M+</span>
       </div>
-      <input type="range" class="w-full accent-(--th-gold-accent)" min="5" max="20" value="10">
+      <input type="range" class="w-full accent-th-gold-accent" min="5" max="20" value="10">
     </div>
 
     <!-- Características -->
@@ -76,8 +76,8 @@
       <div class="flex flex-wrap gap-2">
         @for (char of characteristics; track char.label) {
           <button (click)="toggleCharacteristic(char)" 
-            [class]="char.selected ? 'text-(--th-gold-accent) border-(--th-gold-accent) bg-transparent' : 'text-gray-400 border-(--th-text-slate) bg-transparent'"
-            class="px-4 py-1.5 rounded-full border text-(length:--text-min) font-medium transition-colors hover:border-(--th-gold-accent) btn-interactive">
+            [class]="char.selected ? 'text-th-gold-accent border-th-gold-accent bg-transparent' : 'text-gray-400 border-th-text-slate bg-transparent'"
+            class="px-4 py-1.5 rounded-full border text-(length:--text-min) font-medium transition-colors hover:border-th-gold-accent btn-interactive">
             {{ char.label }}
           </button>
         }
@@ -85,7 +85,7 @@
     </div>
 
     <!-- Action -->
-    <button class=" text-base w-full bg-(--th-gold-accent) hover:bg-(--th-gold-hover) text-[#141822] font-bold py-3.5 rounded-xl transition-colors mt-auto shadow-lg shadow-(--th-gold-accent)/20 btn-interactive">
+    <button class=" text-base w-full bg-th-gold-accent hover:bg-th-gold-hover text-[#141822] font-bold py-3.5 rounded-xl transition-colors mt-auto shadow-lg shadow-th-gold-accent/20 btn-interactive">
       Aplicar Filtros
     </button>
   </aside>
@@ -102,7 +102,7 @@
             
             <!-- EXCLUSIVA Badge -->
             @if (prop.status === 'EN VENTA') {
-              <div class="absolute bottom-4 left-4 bg-(--th-accent) text-[#141822] text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-lg">
+              <div class="absolute bottom-4 left-4 bg-th-accent text-[#141822] text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-lg">
                 Exclusiva
               </div>
             }
@@ -125,7 +125,7 @@
             </div>
             
             <!-- 4 Icons metrics -->
-            <div class="flex items-center justify-between text-(--th-gold-accent) mt-auto pb-6 mb-6 border-b border-[#1f2636]">
+            <div class="flex items-center justify-between text-th-gold-accent mt-auto pb-6 mb-6 border-b border-[#1f2636]">
               
               <div class="flex flex-col items-center justify-center w-[25%] gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12h18M3 16h18M5 12V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4" /></svg>
@@ -150,7 +150,7 @@
             </div>
 
             <!-- Action button -->
-            <button [routerLink]="['/property', prop.id]" class="w-full bg-(--th-gold-accent) hover:bg-(--th-gold-hover) text-[#141822] font-bold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm shadow-md btn-interactive">
+            <button [routerLink]="['/property', prop.id]" class="w-full bg-th-gold-accent hover:bg-th-gold-hover text-[#141822] font-bold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm shadow-md btn-interactive">
               Ver Detalles
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
             </button>

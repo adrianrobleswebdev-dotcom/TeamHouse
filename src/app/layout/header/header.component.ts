@@ -15,6 +15,8 @@ interface NavItem {
 })
 export class HeaderComponent {
 
+
+
     readonly navItems = signal<NavItem[]>([
         { label: 'PROPIEDADES', path: '/properties' },
         { label: 'NOSOTROS', path: '/nosotros' },
@@ -24,10 +26,10 @@ export class HeaderComponent {
     readonly isMenuOpen = signal(false);
     readonly isScrolled = signal(false);
 
-    // @HostListener('window:scroll')
-    // onWindowScroll(): void {
-    //     this.isScrolled.set(window.scrollY > 50);
-    // }
+    @HostListener('window:scroll')
+    onWindowScroll(): void {
+        this.isScrolled.set(window.scrollY > 50);
+    }
 
     toggleMenu(): void {
         this.isMenuOpen.update(open => !open);

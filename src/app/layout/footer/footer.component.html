@@ -1,3 +1,85 @@
-<footer class="footer">
-    <p>footer works!</p>
+
+<footer class="bg-th-bg text-th-bg-white pt-20 pb-12 border-t border-white/25">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      
+      <!-- Columna 1: Branding y Social Media -->
+      <div class="flex flex-col space-y-8">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-th-green rounded-sm flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+          </div>
+          <span class="text-white font-bold text-lg tracking-widest uppercase">TEAMHOUSE</span>
+        </div>
+        <p class="text-slate-400 font-light leading-relaxed max-w-xs">
+          Líderes en el mercado inmobiliario de alta gama. Conectamos sueños con hogares excepcionales en las ubicaciones más exclusivas.
+        </p>
+        <!-- Íconos de Redes Sociales -->
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-th-bg-white hover:text-th-gold-accent transition-all transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="text-white hover:text-th-gold-accent transition-all transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="text-white hover:text-th-gold-accent transition-all transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Propiedades -->
+      <div class="flex flex-col space-y-8">
+        <h3 class="text-lg font-bold tracking-wide">Propiedades</h3>
+        <ul class="flex flex-col space-y-4">
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Ventas</a></li>
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Rentas</a></li>
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Preventas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Compañía -->
+      <div class="flex flex-col space-y-8">
+        <h3 class="text-lg font-bold tracking-wide">Compañía</h3>
+        <ul class="flex flex-col space-y-4">
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Sobre Nosotros</a></li>
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Servicios</a></li>
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm font-light">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto -->
+      <div class="flex flex-col space-y-8">
+        <h3 class="text-lg font-bold tracking-wide">Contacto</h3>
+        <ul class="flex flex-col space-y-6">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-slate-400 text-xl">location_on</span>
+            <span class="text-slate-400 font-light text-sm leading-snug">Paseo de la Reforma, Col. Juárez, CDMX, México</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-400 text-xl">call</span>
+            <span class="text-slate-400 font-light text-sm">+52 (55) 1234 5678</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-400 text-xl">mail</span>
+            <span class="text-slate-400 font-light text-sm">{{contactEmail}}</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior -->
+    <div class="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-slate-500 text-[13px] font-light">
+        © 2026 TeamHouse Inmobiliaria. Todos los derechos reservados.
+      </p>
+      <div class="flex items-center gap-8">
+        <a href="#" class="text-slate-500 hover:text-white text-[13px] transition-colors font-light">Política de Privacidad</a>
+        <a href="#" class="text-slate-500 hover:text-white text-[13px] transition-colors font-light">Términos y Condiciones</a>
+      </div>
+    </div>
+  </div>
 </footer>

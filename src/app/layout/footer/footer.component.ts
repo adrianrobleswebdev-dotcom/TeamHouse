@@ -10,4 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
 
+    contactEmail:string = 'contacto@teamhouse.com.mx'
+
 }
